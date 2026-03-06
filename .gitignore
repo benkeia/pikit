@@ -1,0 +1,26 @@
+node_modules
+.env
+.DS_Store
+
+# Composer
+vendor/
+
+# Fichiers WordPress core générés automatiquement par l'image Docker
+wp-content/index.php
+wp-content/plugins/index.php
+wp-content/themes/index.php
+wp-content/languages/
+wp-content/upgrade/
+wp-content/uploads/
+
+# Plugins fournis par défaut avec WordPress
+wp-content/plugins/hello.php
+
+# Plugins gérés par Composer (wpackagist)
+wp-content/plugins/secure-custom-fields/
+wp-content/plugins/akismet/
+
+# Thèmes par défaut WordPress (fournis par l'image Docker)
+wp-content/themes/twentytwentythree/
+wp-content/themes/twentytwentyfour/
+wp-content/themes/twentytwentyfive/

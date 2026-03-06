@@ -1,0 +1,30 @@
+{
+    "name": "pikit/wordpress",
+    "description": "Pikit — WordPress project managed with Composer",
+    "repositories": [
+        {
+            "type": "composer",
+            "url": "https://wpackagist.org"
+        }
+    ],
+    "require": {
+        "composer/installers": "^2.0",
+        "wpackagist-plugin/secure-custom-fields": "^6.4",
+        "wpackagist-plugin/akismet": "^5.3"
+    },
+    "extra": {
+        "installer-paths": {
+            "wp-content/plugins/{$name}/": [
+                "type:wordpress-plugin"
+            ],
+            "wp-content/themes/{$name}/": [
+                "type:wordpress-theme"
+            ]
+        }
+    },
+    "config": {
+        "allow-plugins": {
+            "composer/installers": true
+        }
+    }
+}
