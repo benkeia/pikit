@@ -5,7 +5,34 @@
  */
 
 defined('ABSPATH') || exit;
+// ---------------------------------------------------------------------------
+// Snapshot utilisateur à la création
+// ---------------------------------------------------------------------------
 
+add_action( 'acf/save_post', 'pikit_snapshot_user_on_reservation', 5 );
+
+/**
+ * Remplit les champs snapshot (promotion, groupe TD/TP) lors de la première
+ * sauvegarde d'une réservation, à partir du profil de l'auteur.
+ * Priorité 5 : s'exécute avant la sauvegarde ACF normale.
+ */
+function pikit_snapshot_user_on_reservation( $post_id ): void {
+
+    if ( get_post_type( $post_id ) !== 'reservations' ) {
+        return;
+    }
+
+    // Ne remplir qu'une seule fois (champ vide = première création)
+    if ( get_field( 'snapshot_promotion', $post_id ) ) {
+        return;
+    }
+
+    $author_id = (int) get_post_field( 'post_author', $post_id );
+
+    update_field( 'snapshot_promotion', pikit_get_user_promotion( $author_id ), $post_id );
+    update_field( 'snapshot_group_td',  pikit_get_user_group_td( $author_id ),  $post_id );
+    update_field( 'snapshot_group_tp',  pikit_get_user_group_tp( $author_id ),  $post_id );
+}
 /**
  * Retourne toutes les réservations actives qui se chevauchent avec une période.
  *

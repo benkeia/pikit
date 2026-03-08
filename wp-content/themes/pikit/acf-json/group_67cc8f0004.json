@@ -1,0 +1,100 @@
+{
+  "key": "group_67cc8f0004",
+  "title": "Profil Pikit",
+  "fields": [
+    {
+      "key": "field_67cc900030",
+      "label": "Promotion",
+      "name": "pikit_promotion",
+      "aria-label": "",
+      "type": "select",
+      "instructions": "",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": { "width": "", "class": "", "id": "" },
+      "choices": {
+        "BUT1": "BUT1",
+        "BUT2": "BUT2",
+        "BUT3": "BUT3"
+      },
+      "default_value": "",
+      "return_format": "value",
+      "multiple": 0,
+      "allow_null": 1,
+      "allow_custom": 0,
+      "ui": 1,
+      "ajax": 0,
+      "placeholder": "— Choisir —"
+    },
+    {
+      "key": "field_67cc900031",
+      "label": "Groupe TD",
+      "name": "pikit_group_td",
+      "aria-label": "",
+      "type": "select",
+      "instructions": "",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": { "width": "50", "class": "", "id": "" },
+      "choices": {
+        "A": "A",
+        "B": "B",
+        "C": "C"
+      },
+      "default_value": "",
+      "return_format": "value",
+      "multiple": 0,
+      "allow_null": 1,
+      "allow_custom": 0,
+      "ui": 1,
+      "ajax": 0,
+      "placeholder": "— Choisir —"
+    },
+    {
+      "key": "field_67cc900032",
+      "label": "Groupe TP",
+      "name": "pikit_group_tp",
+      "aria-label": "",
+      "type": "select",
+      "instructions": "",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": { "width": "50", "class": "", "id": "" },
+      "choices": {
+        "1": "1",
+        "2": "2",
+        "3": "3",
+        "4": "4",
+        "5": "5",
+        "6": "6"
+      },
+      "default_value": "",
+      "return_format": "value",
+      "multiple": 0,
+      "allow_null": 1,
+      "allow_custom": 0,
+      "ui": 1,
+      "ajax": 0,
+      "placeholder": "— Choisir —"
+    }
+  ],
+  "location": [
+    [
+      {
+        "param": "user_role",
+        "operator": "==",
+        "value": "pikit_student"
+      }
+    ]
+  ],
+  "menu_order": 0,
+  "position": "normal",
+  "style": "default",
+  "label_placement": "top",
+  "instruction_placement": "label",
+  "hide_on_screen": "",
+  "active": true,
+  "description": "",
+  "show_in_rest": 0,
+  "modified": 1741435001
+}
