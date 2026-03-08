@@ -10,7 +10,8 @@
     "require": {
         "composer/installers": "^2.0",
         "wpackagist-plugin/secure-custom-fields": "^6.4",
-        "wpackagist-plugin/akismet": "^5.3"
+        "wpackagist-plugin/akismet": "^5.3",
+        "wpackagist-plugin/classic-editor": "^1.6"
     },
     "extra": {
         "installer-paths": {

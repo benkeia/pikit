@@ -19,6 +19,7 @@ wp-content/plugins/hello.php
 # Plugins gérés par Composer (wpackagist)
 wp-content/plugins/secure-custom-fields/
 wp-content/plugins/akismet/
+wp-content/plugins/classic-editor/
 
 # Thèmes par défaut WordPress (fournis par l'image Docker)
 wp-content/themes/twentytwentythree/
