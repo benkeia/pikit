@@ -71,8 +71,8 @@
         "custom-fields"
     ],
     "taxonomies": "",
-    "has_archive": false,
-    "has_archive_slug": "",
+    "has_archive": true,
+    "has_archive_slug": "materiels",
     "rewrite": {
         "permalink_rewrite": "post_type_key",
         "with_front": "1",

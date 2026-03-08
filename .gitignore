@@ -16,6 +16,9 @@ wp-content/uploads/
 # Plugins fournis par défaut avec WordPress
 wp-content/plugins/hello.php
 
+# Notre plugin custom (versionné séparément)
+# wp-content/plugins/pikit/
+
 # Plugins gérés par Composer (wpackagist)
 wp-content/plugins/secure-custom-fields/
 wp-content/plugins/akismet/

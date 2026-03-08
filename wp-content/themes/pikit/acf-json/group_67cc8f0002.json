@@ -1,228 +1,232 @@
 {
-  "key": "group_67cc8f0002",
-  "title": "Champs Réservation",
-  "fields": [
-    {
-      "key": "field_67cc900010",
-      "label": "Projet",
-      "name": "project",
-      "aria-label": "",
-      "type": "post_object",
-      "instructions": "",
-      "required": 0,
-      "conditional_logic": 0,
-      "wrapper": {
-        "width": "",
-        "class": "",
-        "id": ""
-      },
-      "post_type": ["projet"],
-      "taxonomy": "",
-      "return_format": "id",
-      "multiple": 0,
-      "allow_null": 0,
-      "ui": 1,
-      "save_custom": 0,
-      "acfe_filters": ""
-    },
-    {
-      "key": "field_67cc900011",
-      "label": "Date et heure de retrait",
-      "name": "pickup_datetime",
-      "aria-label": "",
-      "type": "date_time_picker",
-      "instructions": "",
-      "required": 0,
-      "conditional_logic": 0,
-      "wrapper": {
-        "width": "50",
-        "class": "",
-        "id": ""
-      },
-      "display_format": "d/m/Y H:i",
-      "return_format": "Y-m-d H:i:s",
-      "first_day": 1
-    },
-    {
-      "key": "field_67cc900012",
-      "label": "Date et heure de retour",
-      "name": "return_datetime",
-      "aria-label": "",
-      "type": "date_time_picker",
-      "instructions": "",
-      "required": 0,
-      "conditional_logic": 0,
-      "wrapper": {
-        "width": "50",
-        "class": "",
-        "id": ""
-      },
-      "display_format": "d/m/Y H:i",
-      "return_format": "Y-m-d H:i:s",
-      "first_day": 1
-    },
-    {
-      "key": "field_67cc900013",
-      "label": "Statut",
-      "name": "status",
-      "aria-label": "",
-      "type": "select",
-      "instructions": "",
-      "required": 0,
-      "conditional_logic": 0,
-      "wrapper": {
-        "width": "",
-        "class": "",
-        "id": ""
-      },
-      "choices": {
-        "draft": "Brouillon",
-        "pending": "En attente",
-        "approved": "Approuvée",
-        "rejected": "Refusée",
-        "picked_up": "Retrait effectué",
-        "returned": "Rendu"
-      },
-      "default_value": "draft",
-      "return_format": "value",
-      "multiple": 0,
-      "allow_null": 0,
-      "allow_custom": 0,
-      "search_placeholder": "",
-      "ui": 1,
-      "ajax": 0,
-      "placeholder": ""
-    },
-    {
-      "key": "field_67cc900014",
-      "label": "Matériel réservé",
-      "name": "equipment_reserved",
-      "aria-label": "",
-      "type": "repeater",
-      "instructions": "",
-      "required": 0,
-      "conditional_logic": 0,
-      "wrapper": {
-        "width": "",
-        "class": "",
-        "id": ""
-      },
-      "layout": "table",
-      "pagination": 0,
-      "min": 0,
-      "max": 0,
-      "collapsed": "",
-      "button_label": "Ajouter un matériel",
-      "rows_per_page": 20,
-      "sub_fields": [
+    "key": "group_67cc8f0002",
+    "title": "Champs Réservation",
+    "fields": [
         {
-          "key": "field_67cc900015",
-          "label": "Matériel",
-          "name": "equipment",
-          "aria-label": "",
-          "type": "post_object",
-          "instructions": "Référencer le type de matériel, pas l'item physique.",
-          "required": 0,
-          "conditional_logic": 0,
-          "wrapper": {
-            "width": "50",
-            "class": "",
-            "id": ""
-          },
-          "post_type": ["materiels"],
-          "taxonomy": "",
-          "return_format": "id",
-          "multiple": 0,
-          "allow_null": 0,
-          "ui": 1,
-          "save_custom": 0,
-          "acfe_filters": "",
-          "parent_repeater": "field_67cc900014"
+            "key": "field_67cc900010",
+            "label": "Projet",
+            "name": "project",
+            "aria-label": "",
+            "type": "post_object",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "post_type": [
+                "projet"
+            ],
+            "taxonomy": "",
+            "return_format": "id",
+            "multiple": 0,
+            "allow_null": 0,
+            "ui": 1,
+            "save_custom": 0,
+            "acfe_filters": ""
         },
         {
-          "key": "field_67cc900016",
-          "label": "Quantité",
-          "name": "quantity",
-          "aria-label": "",
-          "type": "number",
-          "instructions": "",
-          "required": 0,
-          "conditional_logic": 0,
-          "wrapper": {
-            "width": "25",
-            "class": "",
-            "id": ""
-          },
-          "default_value": 1,
-          "min": 1,
-          "max": "",
-          "placeholder": "",
-          "step": 1,
-          "prepend": "",
-          "append": "",
-          "parent_repeater": "field_67cc900014"
+            "key": "field_67cc900011",
+            "label": "Date et heure de retrait",
+            "name": "pickup_datetime",
+            "aria-label": "",
+            "type": "date_time_picker",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "display_format": "d/m/Y H:i",
+            "return_format": "Y-m-d H:i:s",
+            "first_day": 1
         },
         {
-          "key": "field_67cc900017",
-          "label": "Notes",
-          "name": "notes",
-          "aria-label": "",
-          "type": "textarea",
-          "instructions": "",
-          "required": 0,
-          "conditional_logic": 0,
-          "wrapper": {
-            "width": "25",
-            "class": "",
-            "id": ""
-          },
-          "default_value": "",
-          "rows": 2,
-          "new_lines": "br",
-          "maxlength": "",
-          "placeholder": "",
-          "parent_repeater": "field_67cc900014"
+            "key": "field_67cc900012",
+            "label": "Date et heure de retour",
+            "name": "return_datetime",
+            "aria-label": "",
+            "type": "date_time_picker",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "display_format": "d/m/Y H:i",
+            "return_format": "Y-m-d H:i:s",
+            "first_day": 1
+        },
+        {
+            "key": "field_67cc900013",
+            "label": "Statut",
+            "name": "status",
+            "aria-label": "",
+            "type": "select",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "draft": "Brouillon",
+                "pending": "En attente",
+                "approved": "Approuvée",
+                "rejected": "Refusée",
+                "picked_up": "Retrait effectué",
+                "returned": "Rendu"
+            },
+            "default_value": "draft",
+            "return_format": "value",
+            "multiple": 0,
+            "allow_null": 0,
+            "allow_custom": 0,
+            "search_placeholder": "",
+            "ui": 1,
+            "ajax": 0,
+            "placeholder": ""
+        },
+        {
+            "key": "field_67cc900014",
+            "label": "Matériel réservé",
+            "name": "equipment_reserved",
+            "aria-label": "",
+            "type": "repeater",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "layout": "table",
+            "pagination": 0,
+            "min": 0,
+            "max": 0,
+            "collapsed": "",
+            "button_label": "Ajouter un matériel",
+            "rows_per_page": 20,
+            "sub_fields": [
+                {
+                    "key": "field_67cc900015",
+                    "label": "Matériel",
+                    "name": "equipment",
+                    "aria-label": "",
+                    "type": "post_object",
+                    "instructions": "Référencer le type de matériel, pas l'item physique.",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "50",
+                        "class": "",
+                        "id": ""
+                    },
+                    "post_type": [
+                        "materiels"
+                    ],
+                    "taxonomy": "",
+                    "return_format": "id",
+                    "multiple": 0,
+                    "allow_null": 0,
+                    "ui": 1,
+                    "save_custom": 0,
+                    "acfe_filters": "",
+                    "parent_repeater": "field_67cc900014"
+                },
+                {
+                    "key": "field_67cc900016",
+                    "label": "Quantité",
+                    "name": "quantity",
+                    "aria-label": "",
+                    "type": "number",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "25",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": 1,
+                    "min": 1,
+                    "max": "",
+                    "placeholder": "",
+                    "step": 1,
+                    "prepend": "",
+                    "append": "",
+                    "parent_repeater": "field_67cc900014"
+                },
+                {
+                    "key": "field_67cc900017",
+                    "label": "Notes",
+                    "name": "notes",
+                    "aria-label": "",
+                    "type": "textarea",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "25",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "rows": 2,
+                    "new_lines": "br",
+                    "maxlength": "",
+                    "placeholder": "",
+                    "parent_repeater": "field_67cc900014"
+                }
+            ]
+        },
+        {
+            "key": "field_67cc900018",
+            "label": "Notes administrateur",
+            "name": "admin_notes",
+            "aria-label": "",
+            "type": "textarea",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "rows": 4,
+            "new_lines": "br",
+            "maxlength": "",
+            "placeholder": ""
         }
-      ]
-    },
-    {
-      "key": "field_67cc900018",
-      "label": "Notes administrateur",
-      "name": "admin_notes",
-      "aria-label": "",
-      "type": "textarea",
-      "instructions": "",
-      "required": 0,
-      "conditional_logic": 0,
-      "wrapper": {
-        "width": "",
-        "class": "",
-        "id": ""
-      },
-      "default_value": "",
-      "rows": 4,
-      "new_lines": "br",
-      "maxlength": "",
-      "placeholder": ""
-    }
-  ],
-  "location": [
-    [
-      {
-        "param": "post_type",
-        "operator": "==",
-        "value": "reservations"
-      }
-    ]
-  ],
-  "menu_order": 0,
-  "position": "normal",
-  "style": "default",
-  "label_placement": "top",
-  "instruction_placement": "label",
-  "hide_on_screen": "",
-  "active": true,
-  "description": "",
-  "show_in_rest": 0,
-  "modified": 1741435000
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "reservations"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": 0,
+    "modified": 1741435000
 }

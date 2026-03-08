@@ -1,188 +1,188 @@
 {
-  "key": "group_67cc8f0003",
-  "title": "Champs Matériel",
-  "fields": [
-    {
-      "key": "field_67cc900020",
-      "label": "Description",
-      "name": "description",
-      "aria-label": "",
-      "type": "textarea",
-      "instructions": "",
-      "required": 0,
-      "conditional_logic": 0,
-      "wrapper": {
-        "width": "",
-        "class": "",
-        "id": ""
-      },
-      "default_value": "",
-      "rows": 4,
-      "new_lines": "br",
-      "maxlength": "",
-      "placeholder": ""
-    },
-    {
-      "key": "field_67cc900021",
-      "label": "Galerie",
-      "name": "gallery",
-      "aria-label": "",
-      "type": "gallery",
-      "instructions": "",
-      "required": 0,
-      "conditional_logic": 0,
-      "wrapper": {
-        "width": "",
-        "class": "",
-        "id": ""
-      },
-      "return_format": "array",
-      "library": "all",
-      "min": 0,
-      "max": 0,
-      "min_width": "",
-      "min_height": "",
-      "min_size": "",
-      "max_width": "",
-      "max_height": "",
-      "max_size": "",
-      "mime_types": "",
-      "insert": "append",
-      "preview_size": "medium"
-    },
-    {
-      "key": "field_67cc900022",
-      "label": "Marque",
-      "name": "brand",
-      "aria-label": "",
-      "type": "text",
-      "instructions": "",
-      "required": 0,
-      "conditional_logic": 0,
-      "wrapper": {
-        "width": "50",
-        "class": "",
-        "id": ""
-      },
-      "default_value": "",
-      "placeholder": "",
-      "prepend": "",
-      "append": "",
-      "maxlength": ""
-    },
-    {
-      "key": "field_67cc900023",
-      "label": "Modèle",
-      "name": "model",
-      "aria-label": "",
-      "type": "text",
-      "instructions": "",
-      "required": 0,
-      "conditional_logic": 0,
-      "wrapper": {
-        "width": "50",
-        "class": "",
-        "id": ""
-      },
-      "default_value": "",
-      "placeholder": "",
-      "prepend": "",
-      "append": "",
-      "maxlength": ""
-    },
-    {
-      "key": "field_67cc900024",
-      "label": "Items",
-      "name": "equipment_items",
-      "aria-label": "",
-      "type": "repeater",
-      "instructions": "Un item = un exemplaire physique du matériel (ex: Canon 900D n°01).",
-      "required": 0,
-      "conditional_logic": 0,
-      "wrapper": {
-        "width": "",
-        "class": "",
-        "id": ""
-      },
-      "layout": "table",
-      "pagination": 0,
-      "min": 0,
-      "max": 0,
-      "collapsed": "",
-      "button_label": "Ajouter un item",
-      "rows_per_page": 20,
-      "sub_fields": [
+    "key": "group_67cc8f0003",
+    "title": "Champs Matériel",
+    "fields": [
         {
-          "key": "field_67cc900025",
-          "label": "Nom",
-          "name": "name",
-          "aria-label": "",
-          "type": "text",
-          "instructions": "",
-          "required": 0,
-          "conditional_logic": 0,
-          "wrapper": {
-            "width": "70",
-            "class": "",
-            "id": ""
-          },
-          "default_value": "",
-          "placeholder": "ex: Canon 900D - n°01",
-          "prepend": "",
-          "append": "",
-          "maxlength": "",
-          "parent_repeater": "field_67cc900024"
+            "key": "field_67cc900020",
+            "label": "Description",
+            "name": "description",
+            "aria-label": "",
+            "type": "textarea",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "rows": 4,
+            "new_lines": "br",
+            "maxlength": "",
+            "placeholder": ""
         },
         {
-          "key": "field_67cc900026",
-          "label": "Statut",
-          "name": "status",
-          "aria-label": "",
-          "type": "select",
-          "instructions": "",
-          "required": 0,
-          "conditional_logic": 0,
-          "wrapper": {
-            "width": "30",
-            "class": "",
-            "id": ""
-          },
-          "choices": {
-            "available": "Disponible",
-            "maintenance": "En maintenance",
-            "unavailable": "Indisponible"
-          },
-          "default_value": "available",
-          "return_format": "value",
-          "multiple": 0,
-          "allow_null": 0,
-          "allow_custom": 0,
-          "search_placeholder": "",
-          "ui": 1,
-          "ajax": 0,
-          "placeholder": "",
-          "parent_repeater": "field_67cc900024"
+            "key": "field_67cc900021",
+            "label": "Galerie",
+            "name": "gallery",
+            "aria-label": "",
+            "type": "gallery",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "array",
+            "library": "all",
+            "min": 0,
+            "max": 0,
+            "min_width": "",
+            "min_height": "",
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": "",
+            "mime_types": "",
+            "insert": "append",
+            "preview_size": "medium"
+        },
+        {
+            "key": "field_67cc900022",
+            "label": "Marque",
+            "name": "brand",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_67cc900023",
+            "label": "Modèle",
+            "name": "model",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_67cc900024",
+            "label": "Items",
+            "name": "equipment_items",
+            "aria-label": "",
+            "type": "repeater",
+            "instructions": "Un item = un exemplaire physique du matériel (ex: Canon 900D n°01).",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "layout": "table",
+            "pagination": 0,
+            "min": 0,
+            "max": 0,
+            "collapsed": "",
+            "button_label": "Ajouter un item",
+            "rows_per_page": 20,
+            "sub_fields": [
+                {
+                    "key": "field_67cc900025",
+                    "label": "Nom",
+                    "name": "name",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "70",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "ex: Canon 900D - n°01",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": "",
+                    "parent_repeater": "field_67cc900024"
+                },
+                {
+                    "key": "field_67cc900026",
+                    "label": "Statut",
+                    "name": "status",
+                    "aria-label": "",
+                    "type": "select",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "30",
+                        "class": "",
+                        "id": ""
+                    },
+                    "choices": {
+                        "available": "Disponible",
+                        "maintenance": "En maintenance",
+                        "unavailable": "Indisponible"
+                    },
+                    "default_value": "available",
+                    "return_format": "value",
+                    "multiple": 0,
+                    "allow_null": 0,
+                    "allow_custom": 0,
+                    "search_placeholder": "",
+                    "ui": 1,
+                    "ajax": 0,
+                    "placeholder": "",
+                    "parent_repeater": "field_67cc900024"
+                }
+            ]
         }
-      ]
-    }
-  ],
-  "location": [
-    [
-      {
-        "param": "post_type",
-        "operator": "==",
-        "value": "materiels"
-      }
-    ]
-  ],
-  "menu_order": 0,
-  "position": "normal",
-  "style": "default",
-  "label_placement": "top",
-  "instruction_placement": "label",
-  "hide_on_screen": "",
-  "active": true,
-  "description": "",
-  "show_in_rest": 0,
-  "modified": 1741435000
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "materiels"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": 0,
+    "modified": 1741435000
 }
