@@ -198,7 +198,11 @@
             "instructions": "Rempli automatiquement à la création. Conserve la promotion de l'étudiant au moment de la réservation.",
             "required": 0,
             "conditional_logic": 0,
-            "wrapper": { "width": "34", "class": "", "id": "" },
+            "wrapper": {
+                "width": "34",
+                "class": "",
+                "id": ""
+            },
             "default_value": "",
             "readonly": 1,
             "placeholder": "",
@@ -215,7 +219,11 @@
             "instructions": "Rempli automatiquement à la création.",
             "required": 0,
             "conditional_logic": 0,
-            "wrapper": { "width": "33", "class": "", "id": "" },
+            "wrapper": {
+                "width": "33",
+                "class": "",
+                "id": ""
+            },
             "default_value": "",
             "readonly": 1,
             "placeholder": "",
@@ -232,7 +240,11 @@
             "instructions": "Rempli automatiquement à la création.",
             "required": 0,
             "conditional_logic": 0,
-            "wrapper": { "width": "33", "class": "", "id": "" },
+            "wrapper": {
+                "width": "33",
+                "class": "",
+                "id": ""
+            },
             "default_value": "",
             "readonly": 1,
             "placeholder": "",

@@ -9,7 +9,7 @@
 
 defined('ABSPATH') || exit;
 
-define( 'PIKIT_PLUGIN_FILE', __FILE__ );
+define('PIKIT_PLUGIN_FILE', __FILE__);
 
 require_once __DIR__ . '/includes/post-types.php';
 require_once __DIR__ . '/includes/users.php';
