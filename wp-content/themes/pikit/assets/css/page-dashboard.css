@@ -1,28 +1,19 @@
-.pk-dashboard {
-    --pk-parchment: #f5f4ed;
-    --pk-ivory: #faf9f5;
-    --pk-near-black: #141413;
-    --pk-terracotta: #c96442;
-    --pk-olive: #5e5d59;
-    --pk-stone: #87867f;
-    --pk-border: #f0eee6;
-    --pk-border-strong: #e8e6dc;
-    --pk-serf: Georgia, serif;
-    --pk-sans: system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+@import url('./design-system.css');
 
+.pk-dashboard {
     min-height: 100vh;
-    background: var(--pk-parchment);
-    color: var(--pk-near-black);
-    font-family: var(--pk-sans);
+    background: var(--pk-color-parchment);
+    color: var(--pk-color-near-black);
+    font-family: var(--pk-font-sans);
 }
 
 .pk-dashboard-shell {
     display: grid;
     grid-template-columns: 280px 1fr;
-    gap: 28px;
+    gap: var(--pk-space-8xl);
     max-width: 1280px;
     margin: 0 auto;
-    padding: 28px;
+    padding: var(--pk-space-8xl);
 }
 
 .pk-dashboard-mobile-topbar {
@@ -30,11 +21,11 @@
 }
 
 .pk-dashboard-menu-btn {
-    border: 1px solid var(--pk-border-strong);
-    background: #fff;
-    color: var(--pk-near-black);
-    border-radius: 10px;
-    padding: 10px 12px;
+    border: 1px solid var(--pk-color-border-strong);
+    background: var(--pk-color-white);
+    color: var(--pk-color-near-black);
+    border-radius: var(--pk-radius-md);
+    padding: var(--pk-space-lg) var(--pk-space-xl);
     font: inherit;
     cursor: pointer;
 }
@@ -43,53 +34,53 @@
     position: sticky;
     top: 24px;
     align-self: start;
-    background: var(--pk-ivory);
-    border: 1px solid var(--pk-border);
-    border-radius: 16px;
-    padding: 18px;
+    background: var(--pk-color-ivory);
+    border: 1px solid var(--pk-color-border-cream);
+    border-radius: var(--pk-radius-2xl);
+    padding: var(--pk-space-4xl);
 }
 
 .pk-dashboard-brand {
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: var(--pk-space-lg);
     margin-bottom: 18px;
-    font-family: var(--pk-serf);
-    font-size: 24px;
-    line-height: 1;
+    font-family: var(--pk-font-serif);
+    font-size: var(--pk-font-size-h4);
+    line-height: var(--pk-line-height-tight);
 }
 
 .pk-dashboard-brand-dot {
     width: 10px;
     height: 10px;
-    border-radius: 999px;
-    background: var(--pk-terracotta);
+    border-radius: var(--pk-radius-pill);
+    background: var(--pk-color-terracotta);
 }
 
 .pk-dashboard-nav {
     display: grid;
-    gap: 8px;
+    gap: var(--pk-space-md);
 }
 
 .pk-dashboard-nav-link {
     display: block;
     text-decoration: none;
-    color: var(--pk-olive);
-    padding: 10px 12px;
-    border-radius: 10px;
+    color: var(--pk-color-olive);
+    padding: var(--pk-space-lg) var(--pk-space-xl);
+    border-radius: var(--pk-radius-md);
     border: 1px solid transparent;
 }
 
 .pk-dashboard-nav-link:hover,
 .pk-dashboard-nav-link:focus-visible {
-    border-color: var(--pk-border-strong);
+    border-color: var(--pk-color-border-strong);
     outline: none;
 }
 
 .pk-dashboard-nav-link.is-active {
-    color: var(--pk-near-black);
-    background: rgba(201, 100, 66, 0.08);
-    border-color: rgba(201, 100, 66, 0.25);
+    color: var(--pk-color-near-black);
+    background: var(--pk-overlay-brand-08);
+    border-color: var(--pk-overlay-brand-25);
 }
 
 .pk-dashboard-content {
@@ -98,15 +89,15 @@
 
 .pk-dashboard-notice {
     margin-bottom: 16px;
-    padding: 10px 12px;
-    border-radius: 10px;
-    border: 1px solid var(--pk-border-strong);
-    background: var(--pk-ivory);
+    padding: var(--pk-space-lg) var(--pk-space-xl);
+    border-radius: var(--pk-radius-md);
+    border: 1px solid var(--pk-color-border-strong);
+    background: var(--pk-color-ivory);
 }
 
 .pk-dashboard-notice.is-error {
-    border-color: rgba(181, 51, 51, 0.35);
-    background: rgba(181, 51, 51, 0.06);
+    border-color: var(--pk-overlay-danger-35);
+    background: var(--pk-overlay-danger-06);
 }
 
 .pk-dashboard-tab-header {
@@ -114,57 +105,57 @@
 }
 
 .pk-dashboard-eyebrow {
-    margin: 0 0 8px;
-    color: var(--pk-terracotta);
+    margin: var(--pk-space-0) var(--pk-space-0) var(--pk-space-md);
+    color: var(--pk-color-terracotta);
     letter-spacing: 1px;
     text-transform: uppercase;
-    font-size: 11px;
+    font-size: var(--pk-font-size-overline);
     font-weight: 600;
 }
 
 .pk-dashboard-title {
     margin: 0;
-    font-family: var(--pk-serf);
+    font-family: var(--pk-font-serif);
     font-size: clamp(30px, 4vw, 52px);
     line-height: 1.08;
     font-weight: 500;
 }
 
 .pk-dashboard-subtitle {
-    margin: 10px 0 0;
-    color: var(--pk-olive);
+    margin: var(--pk-space-lg) var(--pk-space-0) var(--pk-space-0);
+    color: var(--pk-color-olive);
 }
 
 .pk-dashboard-card {
-    background: var(--pk-ivory);
-    border: 1px solid var(--pk-border);
-    border-radius: 16px;
-    padding: 20px;
-    box-shadow: rgba(0, 0, 0, 0.05) 0 4px 24px;
+    background: var(--pk-color-ivory);
+    border: 1px solid var(--pk-color-border-cream);
+    border-radius: var(--pk-radius-2xl);
+    padding: var(--pk-space-5xl);
+    box-shadow: var(--pk-shadow-card-soft);
     margin-bottom: 16px;
 }
 
 .pk-dashboard-card h2 {
-    margin: 0 0 14px;
-    font-family: var(--pk-serf);
-    font-size: 27px;
-    line-height: 1.2;
+    margin: var(--pk-space-0) var(--pk-space-0) var(--pk-space-2xl);
+    font-family: var(--pk-font-serif);
+    font-size: var(--pk-font-size-h3);
+    line-height: var(--pk-line-height-heading);
     font-weight: 500;
 }
 
 .pk-dashboard-card h3 {
-    margin: 0 0 10px;
-    font-size: 16px;
+    margin: var(--pk-space-0) var(--pk-space-0) var(--pk-space-lg);
+    font-size: var(--pk-font-size-body);
 }
 
 .pk-dashboard-form {
     display: grid;
-    gap: 10px;
+    gap: var(--pk-space-lg);
 }
 
 .pk-dashboard-form label {
-    font-size: 14px;
-    color: var(--pk-olive);
+    font-size: var(--pk-font-size-body-sm);
+    color: var(--pk-color-olive);
 }
 
 .pk-dashboard-form input,
@@ -178,30 +169,30 @@
 .pk-dashboard-form textarea,
 .pk-dashboard-form select {
     width: 100%;
-    background: #fff;
-    border: 1px solid var(--pk-border-strong);
-    border-radius: 10px;
-    padding: 10px 12px;
+    background: var(--pk-color-white);
+    border: 1px solid var(--pk-color-border-strong);
+    border-radius: var(--pk-radius-md);
+    padding: var(--pk-space-lg) var(--pk-space-xl);
 }
 
 .pk-dashboard-form input:focus,
 .pk-dashboard-form textarea:focus,
 .pk-dashboard-form select:focus {
-    border-color: var(--pk-terracotta);
+    border-color: var(--pk-color-terracotta);
     outline: none;
-    box-shadow: 0 0 0 3px rgba(201, 100, 66, 0.14);
+    box-shadow: var(--pk-shadow-focus-warm);
 }
 
 .pk-dashboard-grid-2 {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 10px;
+    gap: var(--pk-space-lg);
 }
 
 .pk-dashboard-actions-row {
     display: flex;
     flex-wrap: wrap;
-    gap: 10px;
+    gap: var(--pk-space-lg);
     align-items: center;
 }
 
@@ -212,23 +203,23 @@
 .pk-dashboard-form button,
 .pk-dashboard-actions-row button {
     border: 1px solid transparent;
-    background: var(--pk-terracotta);
-    color: #fff;
-    border-radius: 10px;
-    padding: 10px 14px;
+    background: var(--pk-color-terracotta);
+    color: var(--pk-color-white);
+    border-radius: var(--pk-radius-md);
+    padding: var(--pk-space-lg) var(--pk-space-2xl);
     cursor: pointer;
 }
 
 .pk-dashboard-form button.is-secondary,
 .pk-dashboard-actions-row button.is-secondary {
-    background: #fff;
-    color: var(--pk-near-black);
-    border-color: var(--pk-border-strong);
+    background: var(--pk-color-white);
+    color: var(--pk-color-near-black);
+    border-color: var(--pk-color-border-strong);
 }
 
 .pk-dashboard-form button.is-danger,
 .pk-dashboard-actions-row button.is-danger {
-    background: rgba(181, 51, 51, 0.95);
+    background: var(--pk-overlay-danger-95);
 }
 
 .pk-dashboard-list {
@@ -236,7 +227,7 @@
     padding: 0;
     list-style: none;
     display: grid;
-    gap: 8px;
+    gap: var(--pk-space-md);
 }
 
 .pk-dashboard-project-link,
@@ -244,11 +235,11 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 12px;
-    border: 1px solid var(--pk-border);
-    background: #fff;
-    border-radius: 10px;
-    padding: 10px 12px;
+    gap: var(--pk-space-xl);
+    border: 1px solid var(--pk-color-border-cream);
+    background: var(--pk-color-white);
+    border-radius: var(--pk-radius-md);
+    padding: var(--pk-space-lg) var(--pk-space-xl);
 }
 
 .pk-dashboard-project-link {
@@ -258,53 +249,53 @@
 
 .pk-dashboard-project-title {
     font-weight: 600;
-    color: var(--pk-near-black);
+    color: var(--pk-color-near-black);
 }
 
 .pk-dashboard-tag {
-    color: var(--pk-olive);
-    font-size: 12px;
-    border: 1px solid var(--pk-border-strong);
-    border-radius: 999px;
-    padding: 3px 9px;
+    color: var(--pk-color-olive);
+    font-size: var(--pk-font-size-label);
+    border: 1px solid var(--pk-color-border-strong);
+    border-radius: var(--pk-radius-pill);
+    padding: var(--pk-space-2xs) var(--pk-space-lg);
 }
 
 .pk-dashboard-items {
     display: grid;
-    gap: 8px;
+    gap: var(--pk-space-md);
 }
 
 .pk-dashboard-item-row {
     display: grid;
     grid-template-columns: 1.6fr 0.5fr 1fr auto;
-    gap: 8px;
+    gap: var(--pk-space-md);
 }
 
 .pk-catalogue-grid {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 12px;
+    gap: var(--pk-space-xl);
 }
 
 .pk-catalogue-card {
-    border: 1px solid var(--pk-border);
-    background: #fff;
-    border-radius: 12px;
-    padding: 14px;
+    border: 1px solid var(--pk-color-border-cream);
+    background: var(--pk-color-white);
+    border-radius: var(--pk-radius-lg);
+    padding: var(--pk-space-2xl);
 }
 
 .pk-catalogue-card h2 {
-    margin: 0 0 6px;
-    font-size: 22px;
+    margin: var(--pk-space-0) var(--pk-space-0) var(--pk-space-sm);
+    font-size: var(--pk-font-size-h5);
 }
 
 .pk-catalogue-meta {
-    margin: 0 0 6px;
-    color: var(--pk-olive);
+    margin: var(--pk-space-0) var(--pk-space-0) var(--pk-space-sm);
+    color: var(--pk-color-olive);
 }
 
 .pk-catalogue-highlight {
-    margin: 0 0 8px;
+    margin: var(--pk-space-0) var(--pk-space-0) var(--pk-space-md);
 }
 
 .pk-catalogue-card ul {
@@ -312,20 +303,20 @@
     padding: 0;
     list-style: none;
     display: grid;
-    gap: 4px;
+    gap: var(--pk-space-xs);
 }
 
 .pk-catalogue-card li {
     display: flex;
     justify-content: space-between;
-    color: var(--pk-olive);
+    color: var(--pk-color-olive);
 }
 
 @media (max-width: 991px) {
     .pk-dashboard-shell {
         grid-template-columns: 1fr;
-        gap: 14px;
-        padding: 16px;
+        gap: var(--pk-space-2xl);
+        padding: var(--pk-space-3xl);
     }
 
     .pk-dashboard-mobile-topbar {
