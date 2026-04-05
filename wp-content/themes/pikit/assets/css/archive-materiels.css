@@ -1,0 +1,216 @@
+.pk-archive-materiels {
+    --parchment: #f5f4ed;
+    --ivory: #faf9f5;
+    --near-black: #141413;
+    --terracotta: #c96442;
+    --coral: #d97757;
+    --olive-gray: #5e5d59;
+    --stone-gray: #87867f;
+    --charcoal: #4d4c48;
+    --warm-sand: #e8e6dc;
+    --border-cream: #f0eee6;
+    --border-warm: #e8e6dc;
+    --serif: Georgia, serif;
+    --sans: system-ui, -apple-system, 'Helvetica Neue', sans-serif;
+
+    background: var(--parchment);
+    color: var(--near-black);
+    padding: 72px 24px 96px;
+}
+
+.pk-archive-hero {
+    max-width: 1120px;
+    margin: 0 auto 40px;
+}
+
+.pk-archive-eyebrow {
+    margin: 0 0 12px;
+    color: var(--terracotta);
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+}
+
+.pk-archive-title {
+    margin: 0;
+    font-family: var(--serif);
+    font-size: clamp(32px, 5vw, 56px);
+    line-height: 1.08;
+    font-weight: 500;
+    letter-spacing: -0.6px;
+}
+
+.pk-archive-subtitle {
+    max-width: 620px;
+    margin: 16px 0 0;
+    color: var(--olive-gray);
+    font-size: 17px;
+    line-height: 1.6;
+}
+
+.pk-archive-empty {
+    max-width: 1120px;
+    margin: 0 auto;
+    padding: 24px;
+    background: var(--ivory);
+    border: 1px solid var(--border-cream);
+    border-radius: 16px;
+    color: var(--olive-gray);
+}
+
+.pk-archive-grid {
+    max-width: 1120px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+    gap: 20px;
+}
+
+.pk-archive-card {
+    grid-column: span 4;
+    min-width: 0;
+}
+
+.pk-archive-card-link {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    text-decoration: none;
+    color: inherit;
+    background: var(--ivory);
+    border: 1px solid var(--border-cream);
+    border-radius: 18px;
+    overflow: hidden;
+    box-shadow: rgba(0, 0, 0, 0.04) 0 4px 24px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.pk-archive-card-link:hover,
+.pk-archive-card-link:focus-visible {
+    transform: translateY(-3px);
+    border-color: var(--border-warm);
+    box-shadow: rgba(0, 0, 0, 0.09) 0 12px 40px;
+    outline: none;
+}
+
+.pk-archive-card-media {
+    background: linear-gradient(180deg, rgba(245, 244, 237, 0.8), rgba(232, 230, 220, 0.9));
+    aspect-ratio: 16 / 10;
+    overflow: hidden;
+}
+
+.pk-archive-card-media img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.pk-archive-card-placeholder {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--serif);
+    font-size: 22px;
+    color: var(--stone-gray);
+}
+
+.pk-archive-card-body {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 22px;
+}
+
+.pk-archive-card-head {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 12px;
+}
+
+.pk-archive-card-title {
+    margin: 0;
+    font-family: var(--serif);
+    font-size: 20px;
+    line-height: 1.2;
+    font-weight: 500;
+    color: var(--near-black);
+}
+
+.pk-archive-card-badge {
+    flex-shrink: 0;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 6px 10px;
+    border-radius: 999px;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 1;
+    letter-spacing: 0.12px;
+    white-space: nowrap;
+}
+
+.pk-archive-card-badge.is-available {
+    background: rgba(201, 100, 66, 0.12);
+    color: var(--terracotta);
+}
+
+.pk-archive-card-badge.is-unavailable {
+    background: rgba(78, 76, 72, 0.08);
+    color: var(--charcoal);
+}
+
+.pk-archive-card-meta,
+.pk-archive-card-detail,
+.pk-archive-card-stock {
+    margin: 0;
+    color: var(--olive-gray);
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.pk-archive-card-stock {
+    color: var(--near-black);
+    font-size: 15px;
+}
+
+.pk-archive-card-stock strong {
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.pk-archive-card-detail {
+    padding-top: 2px;
+    border-top: 1px solid var(--border-cream);
+    color: var(--stone-gray);
+}
+
+@media (max-width: 1024px) {
+    .pk-archive-card {
+        grid-column: span 6;
+    }
+}
+
+@media (max-width: 640px) {
+    .pk-archive-materiels {
+        padding: 56px 16px 72px;
+    }
+
+    .pk-archive-card {
+        grid-column: span 12;
+    }
+
+    .pk-archive-card-body {
+        padding: 18px;
+    }
+
+    .pk-archive-card-head {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
