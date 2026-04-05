@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Template de la page connexion.
  * Affichage uniquement: la logique metier reste dans le plugin Pikit.
@@ -25,8 +26,6 @@ $current_user = wp_get_current_user();
 get_header();
 ?>
 <main class="pikit-login-layout">
-    <?php get_template_part('template-parts/login/page', 'header'); ?>
-
     <section class="pk-main" aria-label="Connexion">
         <?php
         get_template_part(

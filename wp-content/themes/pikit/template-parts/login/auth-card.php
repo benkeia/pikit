@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Composant: carte d'authentification.
  *
@@ -28,8 +29,8 @@ $logout_url     = isset($args['logout_url']) ? (string) $args['logout_url'] : ho
 
         <div class="pk-card-header">
             <svg class="pk-card-icon" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/>
-                <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+                <rect x="3" y="11" width="18" height="11" rx="2" ry="2" />
+                <path d="M7 11V7a5 5 0 0 1 10 0v4" />
             </svg>
             <h2 class="pk-card-title" id="pk-login-title">Bon retour&nbsp;!</h2>
             <p class="pk-card-subtitle">
@@ -54,8 +55,8 @@ $logout_url     = isset($args['logout_url']) ? (string) $args['logout_url'] : ho
                     <input id="pikit-password" type="password" name="pwd" autocomplete="current-password" placeholder="Entrez votre mot de passe" required>
                     <button type="button" class="pk-eye-btn" aria-label="Afficher/masquer le mot de passe">
                         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true">
-                            <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
-                            <circle cx="12" cy="12" r="3"/>
+                            <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" />
+                            <circle cx="12" cy="12" r="3" />
                         </svg>
                     </button>
                 </div>
@@ -80,8 +81,8 @@ $logout_url     = isset($args['logout_url']) ? (string) $args['logout_url'] : ho
 
         <div class="pk-card-header">
             <svg class="pk-card-icon" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/>
-                <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+                <rect x="3" y="11" width="18" height="11" rx="2" ry="2" />
+                <path d="M7 11V7a5 5 0 0 1 10 0v4" />
             </svg>
             <h2 class="pk-card-title" id="pk-login-title">Vous &ecirc;tes connect&eacute;</h2>
             <p class="pk-card-subtitle">
@@ -98,13 +99,13 @@ $logout_url     = isset($args['logout_url']) ? (string) $args['logout_url'] : ho
 
 </div>
 <script>
-(function () {
-    var btn = document.querySelector('.pk-eye-btn');
-    var pwd = document.getElementById('pikit-password');
-    if (btn && pwd) {
-        btn.addEventListener('click', function () {
-            pwd.type = pwd.type === 'password' ? 'text' : 'password';
-        });
-    }
-}());
+    (function() {
+        var btn = document.querySelector('.pk-eye-btn');
+        var pwd = document.getElementById('pikit-password');
+        if (btn && pwd) {
+            btn.addEventListener('click', function() {
+                pwd.type = pwd.type === 'password' ? 'text' : 'password';
+            });
+        }
+    }());
 </script>

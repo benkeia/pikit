@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Composant: zone de contexte de la page connexion.
  */

@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Composant: barre de navigation principale.
  */
@@ -10,7 +11,7 @@ defined('ABSPATH') || exit;
         <div class="pk-topbar">
             <a class="pk-logo" href="<?php echo esc_url(home_url('/')); ?>">
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                    <path d="M4 12 Q8 6 12 12 Q16 18 20 12" stroke="#F2764C" stroke-width="3" stroke-linecap="round"/>
+                    <path d="M4 12 Q8 6 12 12 Q16 18 20 12" stroke="#F2764C" stroke-width="3" stroke-linecap="round" />
                 </svg>
                 Pikit
             </a>

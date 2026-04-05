@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Composant: pied de page et bandeau cookies.
  */
@@ -11,7 +12,7 @@ defined('ABSPATH') || exit;
         <div class="pk-footer-col">
             <a class="pk-footer-brand" href="<?php echo esc_url(home_url('/')); ?>">
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                    <path d="M4 12 Q8 6 12 12 Q16 18 20 12" stroke="#F2764C" stroke-width="3" stroke-linecap="round"/>
+                    <path d="M4 12 Q8 6 12 12 Q16 18 20 12" stroke="#F2764C" stroke-width="3" stroke-linecap="round" />
                 </svg>
                 Pikit
             </a>
@@ -66,17 +67,20 @@ defined('ABSPATH') || exit;
     </div>
 </div>
 <script>
-(function () {
-    var banner = document.getElementById('pk-cookie-banner');
-    if (banner && localStorage.getItem('pk_cookie_consent') !== null) {
-        banner.classList.add('hidden');
+    (function() {
+        var banner = document.getElementById('pk-cookie-banner');
+        if (banner && localStorage.getItem('pk_cookie_consent') !== null) {
+            banner.classList.add('hidden');
+        }
+    }());
+
+    function pkDismissCookies(accepted) {
+        try {
+            localStorage.setItem('pk_cookie_consent', accepted ? '1' : '0');
+        } catch (e) {}
+        var banner = document.getElementById('pk-cookie-banner');
+        if (banner) {
+            banner.classList.add('hidden');
+        }
     }
-}());
-function pkDismissCookies(accepted) {
-    try { localStorage.setItem('pk_cookie_consent', accepted ? '1' : '0'); } catch (e) {}
-    var banner = document.getElementById('pk-cookie-banner');
-    if (banner) {
-        banner.classList.add('hidden');
-    }
-}
 </script>
