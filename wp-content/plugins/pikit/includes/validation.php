@@ -47,22 +47,8 @@ function pikit_validate_reservation(): void
             continue;
         }
 
-        $availability = pikit_get_equipment_available($equipment_id, $pickup, $return);
-
-        // Si on édite une réservation existante, on "rend" son stock actuel
-        // pour ne pas se bloquer sur sa propre quantité
-        $self_reserved = 0;
-
-        if ($current_id) {
-            $existing = get_field('equipment_reserved', $current_id) ?: [];
-            foreach ($existing as $line) {
-                if ((int) $line['equipment'] === $equipment_id) {
-                    $self_reserved += (int) $line['quantity'];
-                }
-            }
-        }
-
-        $real_available = $availability['available'] + $self_reserved;
+        $availability = pikit_get_equipment_available($equipment_id, $pickup, $return, $current_id);
+        $real_available = (int) $availability['available'];
 
         if ($quantity > $real_available) {
             $name = get_the_title($equipment_id);

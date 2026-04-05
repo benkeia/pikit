@@ -12,10 +12,11 @@ defined('ABSPATH') || exit;
  * @param int    $equipment_id  ID du post CPT "materiels"
  * @param string $start         Datetime de début  (format: 'Y-m-d H:i:s')
  * @param string $end           Datetime de fin    (format: 'Y-m-d H:i:s')
+ * @param int    $exclude_reservation_id Réservation à exclure du calcul
  *
  * @return array{total: int, usable: int, reserved: int, available: int}
  */
-function pikit_get_equipment_available(int $equipment_id, string $start, string $end): array
+function pikit_get_equipment_available(int $equipment_id, string $start, string $end, int $exclude_reservation_id = 0): array
 {
 
     // Guard : période invalide
@@ -60,6 +61,10 @@ function pikit_get_equipment_available(int $equipment_id, string $start, string 
     $reserved = 0;
 
     foreach ($reservations as $reservation_id) {
+
+        if ($exclude_reservation_id > 0 && (int) $reservation_id === $exclude_reservation_id) {
+            continue;
+        }
 
         $res_status = get_field('status', $reservation_id);
 

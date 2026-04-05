@@ -13,6 +13,7 @@ define('PIKIT_PLUGIN_FILE', __FILE__);
 
 require_once __DIR__ . '/includes/post-types.php';
 require_once __DIR__ . '/includes/users.php';
+require_once __DIR__ . '/includes/projects.php';
 require_once __DIR__ . '/includes/equipment.php';
 require_once __DIR__ . '/includes/availability.php';
 require_once __DIR__ . '/includes/reservations.php';
