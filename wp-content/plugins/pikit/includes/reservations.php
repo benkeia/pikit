@@ -8,6 +8,7 @@ if (!defined('ABSPATH')) exit;
 
 add_action('acf/save_post', 'pikit_snapshot_user_on_reservation', 5);
 add_action('init', 'pikit_handle_reservation_actions');
+add_action('init', 'pikit_handle_single_equipment_reservation_actions');
 
 // ---------------------------------------------------------------------------
 // Snapshot utilisateur a la creation
@@ -221,13 +222,15 @@ function pikit_create_reservation_draft(int $user_id, array $data)
     $return = isset($data['return_datetime']) ? sanitize_text_field((string) $data['return_datetime']) : '';
     $rows = isset($data['rows']) && is_array($data['rows']) ? $data['rows'] : [];
 
-    $project = get_post($project_id);
-    if (!($project instanceof WP_Post) || $project->post_type !== 'projet') {
-        return new WP_Error('invalid_project', 'Projet invalide.');
-    }
+    if ($project_id > 0) {
+        $project = get_post($project_id);
+        if (!($project instanceof WP_Post) || $project->post_type !== 'projet') {
+            return new WP_Error('invalid_project', 'Projet invalide.');
+        }
 
-    if ((int) $project->post_author !== $user_id) {
-        return new WP_Error('forbidden_project', 'Vous ne pouvez pas creer de demande pour ce projet.');
+        if ((int) $project->post_author !== $user_id) {
+            return new WP_Error('forbidden_project', 'Vous ne pouvez pas creer de demande pour ce projet.');
+        }
     }
 
     $period_check = pikit_validate_iut_period($pickup, $return);
@@ -256,7 +259,9 @@ function pikit_create_reservation_draft(int $user_id, array $data)
         return $reservation_id;
     }
 
-    update_field('project', $project_id, $reservation_id);
+    if ($project_id > 0) {
+        update_field('project', $project_id, $reservation_id);
+    }
     update_field('pickup_datetime', $pickup, $reservation_id);
     update_field('return_datetime', $return, $reservation_id);
     update_field('status', 'draft', $reservation_id);
@@ -589,4 +594,119 @@ function pikit_collect_rows_from_post(): array
     }
 
     return $rows;
+}
+
+/**
+ * Normalise une date issue d'un champ datetime-local.
+ *
+ * @param string $datetime
+ * @return string
+ */
+function pikit_normalize_datetime_local(string $datetime): string
+{
+    $timestamp = strtotime(str_replace('T', ' ', $datetime));
+
+    return $timestamp !== false ? wp_date('Y-m-d H:i:s', $timestamp) : '';
+}
+
+/**
+ * Cree une reservation directe pour une fiche materiel.
+ *
+ * @param int $user_id
+ * @param int $equipment_id
+ * @param string $pickup
+ * @param string $return
+ * @return int|WP_Error
+ */
+function pikit_create_single_equipment_reservation(int $user_id, int $equipment_id, string $pickup, string $return)
+{
+    $equipment = get_post($equipment_id);
+
+    if (!($equipment instanceof WP_Post) || $equipment->post_type !== 'materiels') {
+        return new WP_Error('invalid_equipment', 'Matériel introuvable.');
+    }
+
+    $pickup = pikit_normalize_datetime_local($pickup);
+    $return = pikit_normalize_datetime_local($return);
+
+    $period_check = pikit_validate_iut_period($pickup, $return);
+    if (is_wp_error($period_check)) {
+        return $period_check;
+    }
+
+    $rows = [[
+        'equipment' => $equipment_id,
+        'quantity' => 1,
+        'notes' => '',
+    ]];
+
+    $availability_check = pikit_validate_rows_availability($rows, $pickup, $return, 0);
+    if (is_wp_error($availability_check)) {
+        return $availability_check;
+    }
+
+    $reservation_id = wp_insert_post([
+        'post_type'   => 'reservations',
+        'post_status' => 'publish',
+        'post_author' => $user_id,
+        'post_title'  => sprintf('%s - %s', get_the_title($equipment_id), wp_date('d/m/Y H:i')),
+    ], true);
+
+    if (is_wp_error($reservation_id)) {
+        return $reservation_id;
+    }
+
+    update_field('pickup_datetime', $pickup, $reservation_id);
+    update_field('return_datetime', $return, $reservation_id);
+    update_field('status', 'pending', $reservation_id);
+    update_field('equipment_reserved', $rows, $reservation_id);
+
+    return (int) $reservation_id;
+}
+
+/**
+ * Handle direct reservation from a material single page.
+ */
+function pikit_handle_single_equipment_reservation_actions(): void
+{
+    if (strtoupper((string) ($_SERVER['REQUEST_METHOD'] ?? 'GET')) !== 'POST') {
+        return;
+    }
+
+    $action = isset($_POST['pikit_action']) ? sanitize_key((string) wp_unslash($_POST['pikit_action'])) : '';
+    if ($action !== 'create_single_equipment_reservation') {
+        return;
+    }
+
+    if (!is_user_logged_in()) {
+        wp_safe_redirect(pikit_get_login_page_url(['login_error' => 'auth_required', 'redirect_to' => wp_get_referer() ?: home_url('/')]));
+        exit;
+    }
+
+    $nonce = isset($_POST['pikit_nonce']) ? (string) wp_unslash($_POST['pikit_nonce']) : '';
+    if (!wp_verify_nonce($nonce, 'pikit_create_single_equipment_reservation')) {
+        wp_safe_redirect(add_query_arg(['reservation_error' => 'invalid_nonce'], wp_get_referer() ?: home_url('/')));
+        exit;
+    }
+
+    $user_id = get_current_user_id();
+    $equipment_id = isset($_POST['equipment_id']) ? (int) wp_unslash($_POST['equipment_id']) : 0;
+    $pickup = isset($_POST['pickup_datetime']) ? sanitize_text_field((string) wp_unslash($_POST['pickup_datetime'])) : '';
+    $return = isset($_POST['return_datetime']) ? sanitize_text_field((string) wp_unslash($_POST['return_datetime'])) : '';
+
+    $reservation_id = pikit_create_single_equipment_reservation($user_id, $equipment_id, $pickup, $return);
+
+    if (is_wp_error($reservation_id)) {
+        wp_safe_redirect(add_query_arg([
+            'reservation_error' => $reservation_id->get_error_code(),
+            'reservation_error_message' => rawurlencode($reservation_id->get_error_message()),
+        ], wp_get_referer() ?: home_url('/')));
+        exit;
+    }
+
+    wp_safe_redirect(pikit_get_mes_reservations_url([
+        'reservation_created' => '1',
+        'reservation_id' => (int) $reservation_id,
+    ]));
+    exit;
 }

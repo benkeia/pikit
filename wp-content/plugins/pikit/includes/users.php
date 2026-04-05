@@ -429,3 +429,20 @@ function pikit_get_header_navigation_items(): array
         ],
     ]);
 }
+
+/**
+ * Retourne l'URL de la page "Mes réservations".
+ *
+ * @param array<string, string|int> $args
+ * @return string
+ */
+function pikit_get_mes_reservations_url(array $args = []): string
+{
+    $page = get_page_by_path('mes-reservations');
+
+    $url = $page instanceof WP_Post
+        ? get_permalink($page)
+        : home_url('/mes-reservations/');
+
+    return !empty($args) ? add_query_arg($args, $url) : $url;
+}

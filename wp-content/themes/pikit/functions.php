@@ -90,4 +90,30 @@ function pikit_theme_enqueue_assets(): void
 			true
 		);
 	}
+
+	if (is_singular('materiels')) {
+		wp_enqueue_style(
+			'pikit-single-materiels',
+			get_theme_file_uri('assets/css/single-materiels.css'),
+			[],
+			filemtime(get_theme_file_path('assets/css/single-materiels.css'))
+		);
+
+		wp_enqueue_script(
+			'pikit-single-materiels',
+			get_theme_file_uri('assets/js/single-materiels.js'),
+			[],
+			filemtime(get_theme_file_path('assets/js/single-materiels.js')),
+			true
+		);
+	}
+
+	if (is_page_template('template-mes-reservations.php')) {
+		wp_enqueue_style(
+			'pikit-template-mes-reservations',
+			get_theme_file_uri('assets/css/template-mes-reservations.css'),
+			[],
+			filemtime(get_theme_file_path('assets/css/template-mes-reservations.css'))
+		);
+	}
 }
